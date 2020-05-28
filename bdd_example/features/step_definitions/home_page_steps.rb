@@ -5,3 +5,7 @@ end
 Then(/^I should see the logo is present$/) do
   expect((on HomePage).page_logo_displayed?).to be true
 end
+
+Then(/^I should see the page title$/) do
+  expect((on HomePage).page_title_displayed?). to be true
+end

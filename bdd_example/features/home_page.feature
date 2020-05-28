@@ -10,12 +10,14 @@ Feature: Home page title and logo
     Given I am on the Selenium Test website
     Then I should see the logo is present
 
-#  Scenario: Check that the page title is present
-#    Given I am on the Selenium Test website
-#    Then I should see the page title
-#
-#  Scenario: Check that the logo is present on a mobile device
-#    Then I should see the logo is present
-#
-#  Scenario: Check that the page title is present on a mobile device
-#    Then I should see the page title is present
+  Scenario: Check that the page title is present
+    Given I am on the Selenium Test website
+    Then I should see the page title
+
+  @manual
+  Scenario: Check that the logo is present on a mobile device
+    Then I should see the logo is present
+
+  @manual
+  Scenario: Check that the page title is present on a mobile device
+    Then I should see the page title is present
