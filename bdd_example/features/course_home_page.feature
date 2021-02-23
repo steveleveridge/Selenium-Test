@@ -22,11 +22,11 @@ Feature: Course homepage
     When I click on the Start course button
     Then I am taken to the Working with Chemicals page
 
-  @manual
-  Scenario: Check that the course logo is present on a mobile device
-    Then I should see the logo is present
-
-  @manual
-  Scenario: Check that the course title is present on a mobile device
-    Then I should see the page title is present
+#  @manual
+#  Scenario: Check that the course logo is present on a mobile device
+#    Then I should see the course logo is present
+#
+#  @manual
+#  Scenario: Check that the course title is present on a mobile device
+#    Then I should see the course title is present
 

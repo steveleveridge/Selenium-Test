@@ -1,1 +1,1 @@
-default: --no-source --color --format pretty -t ~@manual
+default: --no-source --color --format pretty

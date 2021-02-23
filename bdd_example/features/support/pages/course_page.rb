@@ -1,81 +1,37 @@
 # encoding: utf-8
 
-class HomePage
+class CoursePage
 
   include PageObject
 
-  img :page_logo, xpath: "//img[contains(@class, 'App-logo')]"
-  h1 :page_title, xpath: "//h1[contains(@class, 'App-title')]"
-  div :list_of_names_panel, xpath: "//div[contains(@class, 'col-md-3')]"
-  div :details_panel, xpath: "//div[contains(@class, 'col-md-6')]"
-  h3 :customer_name, xpath: "//div[contains(@class, 'col-md-3')]//h3[contains(@class, 'panel-title')]"
-  p :customer_email_address, xpath: "//div[contains(@class, 'col-md-3')]//div[contains(@class, 'panel-body')]/p[1]"
-  p :customer_telephone_number, xpath: "//div[contains(@class, 'col-md-3')]//div[contains(@class, 'panel-body')]/p[2]"
-  button :view_details, xpath: "//div[contains(@class, 'col-md-3')]//div[contains(@class, 'panel-body')]/button"
-  p :name, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[1]"
-  p :email, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[2]"
-  p :phone, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[3]"
-  p :city, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[4]"
-  p :state, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[5]"
-  p :country, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[6]"
-  p :organization, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[7]"
-  p :job_profile, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[8]"
-  p :add_info, xpath: "//div[contains(@class, 'col-md-6')]//div[contains(@class, 'panel-body')]/p[9]"
+  #page elements
+  div :course_image, id: "pa_602f99d67dab9_p1738fe84439-section__content"
+  h1 :course_title, id: "pa_602f99d67dab9_p1739076bba0-projectTitle"
+  div :course_content, id: "pa_602f99d67dab9_p1739076bba1-text"
+  span :start_button, id: "pa_602f99d67dab9_p15766ba6ccd-button__text"
+  h3 :working_with_chemicals_title, id: "pa_602f99d68219c_p17390dc8e75-title"
 
-  def page_logo_displayed?
-    page_logo_element.visible?
+  def course_image_displayed?
+    course_image_element.wait_until_present(60)
+    course_image_element.visible?
   end
 
-  def page_title_displayed?
-    page_title_element.text == "Selenium Test"
+  def course_title
+    course_title_element.text
   end
 
-  def list_of_names_panel_displayed?
-    list_of_names_panel_element.wait_until_present(30)
-    list_of_names_panel_element.visible?
+  def course_content
+    course_content_element.text
   end
 
-  def details_panel_displayed?
-    details_panel_element.wait_until_present(30)
-    details_panel_element.visible?
+  def click_start_button
+    start_button_element.click
   end
 
-  def customer_full_name
-    customer_name_element.wait_until_present(30)
-    customer_name_element.text
+  def working_with_chemicals
+    working_with_chemicals_title_element.wait_until_present(60)
+    working_with_chemicals_title_element.text
   end
 
-  def customer_email_address
-    customer_email_address_element.wait_until_present(30)
-    customer_email_address_element.text
-  end
-
-  def customer_telephone_number
-    customer_telephone_number_element.wait_until_present(30)
-    customer_telephone_number_element.text
-  end
-
-  def view_details_displayed?
-    view_details_element.wait_until_present(30)
-    view_details_element.visible?
-  end
-
-  def click_view_details
-    view_details_element.wait_until_present(30)
-    view_details_element.click
-  end
-
-  def full_details_displayed?
-    name_element.wait_until_present(30)
-    name_element.text == "Name : John Smith" and
-    email_element.text == "Email : jsmith@test.com" and
-    phone_element.text == "Phone : 0208092029" and
-    city_element.text == "City : London" and
-    state_element.text == "State : Greater London" and
-    country_element.text == "Country : England" and
-    organization_element.text == "Organization : Company 1" and
-    job_profile_element.text == "Job Profile : Software Developer" and
-    add_info_element.text == "Additional Info : Has Bought a lot of products before and a high Value Customer"
-  end
 
 end
